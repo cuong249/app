@@ -3,7 +3,7 @@ import TodoForm from "./TodoForm";
 import TodoList from "./TodoList"
 
 function Todo(){
-    const [todo, setTodos] = useState([]);
+    const [todos, setTodos] = useState([]);
 
     
         const addTodo = (todo) => {
@@ -28,7 +28,7 @@ function Todo(){
 
 
         const completeTodo = (id) => {
-            let updatedTodos = todo.map((todo) => {
+            let updatedTodos = todos.map((todo) => {
                 if (todo.id ==id) {
                     todo.isComplete = !todo.isComplete;
                 }
@@ -42,7 +42,7 @@ function Todo(){
                 <h1 className="header">Add your Plan for today?</h1>
 
 
-                <TodoList onSubmit={addTodo} />
+                <TodoForm onSubmit={addTodo} />
                 <TodoList
                   todos={todos}
                   updateTodo={updateTodo}
